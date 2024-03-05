@@ -1,3 +1,5 @@
+import { appendFileSync } from 'fs';
+
 type Position = 'forward' | 'midfield' | 'defender' | 'goalkeeper';
 
 abstract class Player {
@@ -12,7 +14,7 @@ abstract class Player {
   score: number = 0;
 
   get play(): string {
-    return `${this.name} is playing`;
+    return `${this.name} is playing. His age is ${this.age} and his position is ${this.position}`;
   }
 
   scoreGoals(goals: number): void {
@@ -65,4 +67,4 @@ messi.scoreGoals(2);
 messi.scoreGoals(3);
 messi.showScore();
 
-const players: Player[] = [messi, ronaldo];
+// const players: Player[] = [messi, ronaldo];
